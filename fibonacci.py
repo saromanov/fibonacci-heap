@@ -37,6 +37,9 @@ class FibonacciHeap:
         '''
         return self.head.value
     
+    def degreewiseMerge(self):
+        pass
+    
     def removeMax(self):
         ''' remove max value from the head of heap
         and after this, rebuild of the heap
