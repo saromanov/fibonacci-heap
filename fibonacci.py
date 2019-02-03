@@ -25,10 +25,10 @@ class FibonacciHeap:
             new_node.right = self.head
             self.head.left = new_node
         
-        if new_node.value < self.head.value:
+        if new_node.value > self.head.value:
             self.head = new_node
     
-    def min(self):
-        ''' return head of the heap with minimal value
+    def max(self):
+        ''' return head of the heap with maximum value
         '''
         return self.head.value
