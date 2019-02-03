@@ -58,3 +58,13 @@ class FibonacciHeap:
             child.parent = None
             child = right
             degree-=1
+    
+        tmp.left.right = tmp.right
+        tmp.right.left = tmp.left
+        if tmp == tmp.right:
+            self.head = None
+        else:
+            self.head = tmp.right
+            self.degreewiseMerge()
+        self._nodes-=1
+        return tmp
