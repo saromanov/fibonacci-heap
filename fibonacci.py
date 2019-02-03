@@ -44,3 +44,17 @@ class FibonacciHeap:
         tmp = self.head
         if not tmp:
             raise HeadIsNotExistException('head of the heap is not exist')
+        degree = tmp.degree
+        child = tmp.child
+        right = None
+        while degree > 0:
+            right = child.right
+            child.left.right = child.right
+            child.right.left = child.left
+            child.left = tmp
+            child.right = tmp.right
+            self.head = child
+            child.left.right = child
+            child.parent = None
+            child = right
+            degree-=1
