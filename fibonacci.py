@@ -1,5 +1,9 @@
 from node import Node
 
+
+class HeadIsNotExistException(Exception):
+    pass
+
 class FibonacciHeap:
     def __init__(self):
         '''initialization of the fibonacci heap
@@ -32,3 +36,11 @@ class FibonacciHeap:
         ''' return head of the heap with maximum value
         '''
         return self.head.value
+    
+    def removeMax(self):
+        ''' remove max value from the head of heap
+        and after this, rebuild of the heap
+        '''
+        tmp = self.head
+        if not tmp:
+            raise HeadIsNotExistException('head of the heap is not exist')
