@@ -27,3 +27,8 @@ class FibonacciHeap:
         
         if new_node.key > self.head.key:
             self.head = new_node
+    
+    def min(self):
+        ''' return head of the heap with minimal value
+        '''
+        return self.head.key
